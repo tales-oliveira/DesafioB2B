@@ -75,6 +75,9 @@ CREATE TABLE IF NOT EXISTS public.telefones (
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+ALTER TABLE public.contatos ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.telefones ENABLE ROW LEVEL SECURITY;
+
 GRANT USAGE ON SCHEMA public TO service_role;
 GRANT SELECT ON TABLE public.contatos, public.telefones TO service_role;
 
